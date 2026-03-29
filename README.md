@@ -3,10 +3,26 @@
 This is my design of multiband guitar distortion suitable for bass. I designed it because I wanted to have bass distortion where sub is clean and everything is adjustable.
 
 ## Table of Contents
+- [Project Status](#project-status)
 - [Project Goals](#project-goals)
 - [My Design Features](#design-features)
 - [How It Works](#how-it-works)
 - [Circuit Schematic](#circuit-schematic)
+
+## Project Status
+
+This project is **currently in progress**
+
+I have done: 
+- Complete idea and functionality of the project
+- Full schematic of circuit
+- All calculations needed to get desired sound design
+
+What is left to do:
+- Make simulation of circuit using audio file
+- After simulation consider any corrections in circuit
+- Design a PCB
+- Assembly prototype and final product.
 
 ## Project Goals:
 The goal of this project is to design and build a distortion pedal suitable for guitar and bass. I want it to provide solid and clean bass fundamentals with sharp mids and highs. My motivation is very limited choice of products on the market, in which you can adjust processing of different bands independently creating different sounds.
