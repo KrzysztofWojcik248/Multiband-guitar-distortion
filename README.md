@@ -8,6 +8,7 @@ This is my design of multiband guitar distortion suitable for bass. I designed i
 - [My Design Features](#design-features)
 - [How It Works](#how-it-works)
 - [Circuit Schematic](#circuit-schematic)
+- [License Information](#license-information)
 
 ## Project Status
 
@@ -43,7 +44,11 @@ As shown on the block schematic below:
 Audio signal is provided by audio jack to the circuit, then the signal amplitude is adjusted and signal is placed on 4.5V (half of the power supply) so gain and filters are able to work on proper range. Then signal is processed by Sallen-Key active filters. There are gaps between the bands ranges, but second order filters provides only 12 Db/oct slopes so these gaps provides better transistion between bands without cumulating amplitudes of different bands. Most of filters have 1.6 gain, wchich makes them almost perfect butterworths, but 850Hz low pass filter has 2.2 gain which gives a little peak which stands for "growl" sound of this frequency. After filtration there are three indepentent bands. The sub-bass band (<120Hz) has only a volume knob to adjust volume of lows in the mix. It doesn't have any other processing because clipping fundamental harmonics at most casses destroys the sound. The second band is low-mids (140Hz-850Hz) after filtration there is a gain based on non-inverting op-amp like volume in sub band. The difference is, that in this case after gain there are two NPN clipping transistors, so the gain knob determines how strong the clipping is. Bias in this section is not 4.5V but 5.7V which provides asymetrical clipping and there are two transistors instead of one, because clipping signal two times can provide warmer feel then one stronger distortion. The gain knob on minimal position can provide clear signal and maximal position can provide strong clipping. Volume knob lets suit the signal to the rest of the mix. High band (>950Hz) works very similar to low-mids, but instead of transistor there are clipping diodes. One diode is red led, and the second one is selected between harder si diode and softer yellow diode. This variety lets you choose between soft warm highs and sharp, distorted ones. Every band after processing comes through a resistor to summing op-amp which provides output signal to audio jack. In the end there is led limiter which limits signal whenever it is too close to the level of 2V.
 
 ## Circuit Schematic
-Image below shows my attempt to realizee this idea:
+Image below shows my attempt to realizee this idea as complete electronic circuit. For design I used KiCad:
 <img width="3507" height="2480" alt="MultiBandDistortionSchematics" src="https://github.com/user-attachments/assets/7529868a-a74a-42e4-9fb7-2263521626f4" />
 This schematic features some additional comments. Most of them shows gain of amp or voltage divider, because voltage levels are very important for safety and mixing bands.
+
+## License information
+
+For this project I am using CERN-OHL-W license. For details you can find it in repository files.
 
