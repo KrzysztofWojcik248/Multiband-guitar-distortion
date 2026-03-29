@@ -46,7 +46,7 @@ Audio signal is provided by audio jack to the circuit, then the signal amplitude
 ## Circuit Schematic
 Image below shows my attempt to realizee this idea as complete electronic circuit. For design I used KiCad:
 <img width="3507" height="2480" alt="MultiBandDistortionSchematics" src="https://github.com/user-attachments/assets/7529868a-a74a-42e4-9fb7-2263521626f4" />
-This schematic features some additional comments. Most of them shows gain of amp or voltage divider, because voltage levels are very important for safety and mixing bands.
+This schematic features some additional comments. Most of them shows gain of amp or voltage divider. I added it because voltage levels are very important for safety and mixing bands.
 
 ## License information
 
