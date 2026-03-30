@@ -20,17 +20,17 @@ I have done:
 - All calculations needed to get desired sound design
 
 What is left to do:
-- Make simulation of circuit using audio file
-- After simulation consider any corrections in circuit
+- Make a simulation of the circuit using audio file
+- After simulation consider any corrections in the circuit
 - Design a PCB
-- Assembly prototype and final product.
+- Assembly prototype and the final product.
 
 ## Project Goals:
-The goal of this project is to design and build a distortion pedal suitable for guitar and bass. I want it to provide solid and clean bass fundamentals with sharp mids and highs. My motivation is very limited choice of products on the market, in which you can adjust processing of different bands independently creating different sounds, so I decided to design my own.
+The goal of this project is to design and build a distortion pedal suitable for guitar and bass. I want it to provide solid and clean bass fundamentals with sharp mids and highs. Very limited choice of products on the market, in which you can adjust processing of different bands independently creating different sounds also motivates me, so I decided to design my own.
 
 ## My Design Features:
 
-- Three independent bands: Sub, low-mid and high-mids with highs
+- Three independent bands: Sub-bass, low-mid and high-mids with highs
 - Adjustable gain before clipping and volume for each band
 - Transistor-based clipping for the low-mid band
 - Choice between soft (led) and hard (si) clipping diodes in high band clipping
@@ -41,7 +41,7 @@ As shown on the block schematic below:
 <img width="1750" height="1080" alt="schemat" src="https://github.com/user-attachments/assets/59ac8ee4-b57c-42ae-a54a-88667e11b8af" />
 
 
-Audio signal is provided by audio jack to the circuit, then the signal amplitude is adjusted and signal is placed on 4.5V (half of the power supply) so gain and filters are able to work on proper range. Then signal is processed by Sallen-Key active filters. There are gaps between the bands ranges, but second order filters provides only 12 Db/oct slopes so these gaps provides better transistion between bands without cumulating amplitudes of different bands. Most of filters have 1.6 gain, which makes them almost perfect butterworths, but 850Hz low pass filter has 2.2 gain which gives a little peak which stands for "growl" sound of this frequency. After filtration there are three indepentent bands. The sub-bass band (<120Hz) has only a volume knob to adjust volume of lows in the mix. It doesn't have any other processing because clipping fundamental harmonics in most casses destroys the sound. The second band is low-mids (140Hz-850Hz) after filtration there is a gain based on non-inverting op-amp like volume in sub band. The difference is, that in this case after gain there are two NPN clipping transistors, so the gain knob determines how strong the clipping is. Bias in this section is not 4.5V but 5.7V which provides asymetrical clipping and there are two transistors instead of one, because clipping signal two times can provide warmer feel then one stronger distortion. The gain knob on minimal position can provide clear signal and maximal position can provide strong clipping. Volume knob lets suit the signal to the rest of the mix. High band (>950Hz) works very similar to low-mids, but instead of transistor there are clipping diodes. One diode is red led, and the second one is selected between harder si diode and softer yellow diode. This variety lets you choose between soft warm highs and sharp, distorted ones. Every band after processing comes through a resistor to summing op-amp which provides output signal to audio jack.The output stage features an LED-based limiter to prevent clipping when the signal approaches the 2V threshold.
+Audio signal is provided by audio jack to the circuit, then the signal amplitude is adjusted and signal is placed on 4.5V (half of the power supply) so gain and filters are able to work on proper range. Then signal is processed by Sallen-Key active filters. There are gaps between the bands ranges, but second order filters provides only 12 dB/oct slopes so these gaps provides better transistion between bands without cumulating amplitudes of different bands. Most of filters have 1.6 gain, which makes them almost perfect Butterworths, but 850Hz low pass filter has 2.2 gain which gives a little peak standing for a "growl" sound of this frequency. After filtration there are three indepentent bands. The sub-bass band (<120Hz) has only a volume knob to adjust volume of lows in the mix. It doesn't have any other processing because clipping fundamental harmonics in most casses destroys the sound. The second band is low-mids (140Hz-850Hz) after filtration there is a gain based on non-inverting op-amp like volume in sub band. The difference is, that in this case after gain there are two NPN clipping transistors, so the gain knob determines how strong the clipping is. Bias in this section is not 4.5V but 5.7V which provides asymetrical clipping and there are two transistors instead of one, because clipping signal two times can provide softer feel then one stronger distortion. The gain knob on minimal position can provide clear signal, while maximal position provides strong clipping. Volume knob lets suit the signal to the rest of the mix. High band (>950Hz) works very similar to low-mids, but instead of transistor there are clipping diodes. One diode is red LED, and the second one is selected between harder si diode and softer yellow diode. This variety lets you choose between soft, warm highs and sharp, distorted ones. Every band after processing comes through a resistor to summing op-amp which provides output signal to audio jack.The output stage features an LED-based limiter to prevent clipping when the signal approaches the 2V threshold.
 
 ## Circuit Schematic
 Image below shows my attempt to realizee this idea as complete electronic circuit. For design I used KiCad:
